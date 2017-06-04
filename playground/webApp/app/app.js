@@ -6,13 +6,13 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.version'
 ]).
-config(['$locationProvider', '$routeProvider', '$stateProvider', function($locationProvider, $routeProvider, $stateProvider) {
-  $locationProvider.hashPrefix('!');
+config(['$locationProvider', '$routeProvider', '$stateProvider', '$urlRouterProvider',
+    function($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider) {
+          $urlRouterProvider.otherwise('/welcome');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-
-    $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
-  });
+          $stateProvider
+            .state('welcome', {
+              url: "/welcome",
+              templateUrl: "welcome/welcome.html"
+          });
 }]);

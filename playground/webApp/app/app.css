@@ -24,3 +24,12 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.welcomeHeader {
+    background: black !important;
+    color: white;
+}
+
+.welcomeBackground {
+    background: #87CEFA !important;
+}
