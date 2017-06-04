@@ -16,3 +16,6 @@ build/
 *.lock
 
 *.bin
+.idea/
+
+playground/src/main/resources/static/

@@ -6,6 +6,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "jquery": "~2.0.3",
+    "bootstrap": "~3.0.0",
     "angular": "~1.5.7",
     "angular-route": "~1.5.7",
     "angular-loader": "~1.5.7",
