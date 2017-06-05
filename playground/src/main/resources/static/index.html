@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" class="fill">
   <head>
     <link href="app.css" rel="stylesheet">
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +23,21 @@
     <script src="components/version/version.js"></script>
     <script src="components/version/version-directive.js"></script>
     <script src="components/version/interpolate-filter.js"></script>
+
+    <form>
+      <div class="form-group playgroundHeader col-xs-12 text-center">
+        <div>Marco's</div>
+        <h4>Spring 4 and AngularJS playground</h4>
+      </div>
+
+      <div class="row">
+        <ul class="nav col-xs-12 nav-tabs">
+          <li ui-sref-active="active"><a ui-sref="springPlayground">Spring 4</a></li>
+          <li ui-sref-active="active"><a ui-sref="angularPlayground">AngularJS</a></li>
+        </ul>
+      </div>
+
+    </form>
 
       <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
       <div ui-view></div>

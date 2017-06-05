@@ -8,11 +8,15 @@ angular.module('myApp', [
 ]).
 config(['$locationProvider', '$routeProvider', '$stateProvider', '$urlRouterProvider',
     function($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider) {
-          $urlRouterProvider.otherwise('/welcome');
+        $urlRouterProvider.otherwise('/playground/spring');
 
-          $stateProvider
-            .state('welcome', {
-              url: "/welcome",
-              templateUrl: "welcome/welcome.html"
-          });
+        $stateProvider
+            .state('springPlayground', {
+              url: "/playground/spring",
+              templateUrl: "springPlayground/springPlayground.html"
+            })
+            .state('angularPlayground', {
+              url: "/playground/angular",
+              templateUrl: "angularPlayground/angularPlayground.html"
+        });
 }]);
