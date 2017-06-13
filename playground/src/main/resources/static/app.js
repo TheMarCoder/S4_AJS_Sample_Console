@@ -10,5 +10,5 @@ angular.module('myApp', [
 ]).
 config(['$urlRouterProvider',
     function( $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/playground/spring');
+        $urlRouterProvider.otherwise('/playground/spring/overview');
 }]);

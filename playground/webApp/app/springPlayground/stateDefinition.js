@@ -9,7 +9,21 @@ config(['$locationProvider', '$routeProvider', '$stateProvider',
     function($locationProvider, $routeProvider, $stateProvider) {
         $stateProvider
             .state('springPlayground', {
+              abstract: true,
               url: "/playground/spring",
-              templateUrl: "springPlayground/springPlayground.html"
-            });
+              views: {
+                  '': {
+                        templateUrl: "springPlayground/springPlayground.html" },
+                  'console@springPlayground': {
+                        templateUrl: "springPlayground/console.html" }
+              }
+            })
+
+            .state('springPlayground.overview', {
+              url: "/overview",
+              views: {
+                  'headline@springPlayground': {
+                        template: "<h1>Spring 4 Playground</h1>" }
+              }
+        });
 }]);
