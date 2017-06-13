@@ -5,15 +5,10 @@ angular.module('myApp', [
   'ui.router',
   'ngRoute',
   'myApp.version',
-  'myApp.springPlayground'
+  'myApp.springPlayground',
+  'myApp.angularPlayground'
 ]).
-config(['$locationProvider', '$routeProvider', '$stateProvider', '$urlRouterProvider',
-    function($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider) {
+config(['$urlRouterProvider',
+    function( $urlRouterProvider) {
         $urlRouterProvider.otherwise('/playground/spring');
-
-        $stateProvider
-            .state('angularPlayground', {
-              url: "/playground/angular",
-              templateUrl: "angularPlayground/angularPlayground.html"
-        });
 }]);
