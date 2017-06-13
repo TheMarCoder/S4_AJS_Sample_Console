@@ -5,5 +5,5 @@
 angular.module('myApp.springPlayground')
     .controller('consoleCtrl', function() {
         var self = this;
-        self.output = "Test";
+        self.output = "Hello world!";
     });
