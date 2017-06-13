@@ -11,17 +11,15 @@ config(['$locationProvider', '$routeProvider', '$stateProvider',
             .state('springPlayground', {
               abstract: true,
               url: "/playground/spring",
-              views: {
-                  '': {
-                        templateUrl: "springPlayground/springPlayground.html" },
-                  'console@springPlayground': {
-                        templateUrl: "springPlayground/console.html" }
-              }
+              controller: "consoleCtrl as console",
+              templateUrl: "springPlayground/springPlayground.html"
             })
 
             .state('springPlayground.overview', {
               url: "/overview",
               views: {
+                  'console@springPlayground': {
+                        templateUrl: "springPlayground/views/console/console.html"},
                   'headline@springPlayground': {
                         template: "<h1>Spring 4 Playground</h1><br><h2>Overview</h2>" }
               }
