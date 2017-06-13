@@ -23,7 +23,7 @@ config(['$locationProvider', '$routeProvider', '$stateProvider',
               url: "/overview",
               views: {
                   'headline@springPlayground': {
-                        template: "<h1>Spring 4 Playground</h1>" }
+                        template: "<h1>Spring 4 Playground</h1><br><h2>Overview</h2>" }
               }
         });
 }]);

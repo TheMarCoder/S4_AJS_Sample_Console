@@ -38,3 +38,9 @@
 .welcomeBackground {
     background: #87CEFA !important;
 }
+
+.console {
+    background: black !important;
+    color: lawngreen;
+    height: 750px;
+}
