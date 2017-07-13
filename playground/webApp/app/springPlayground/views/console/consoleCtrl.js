@@ -9,8 +9,8 @@ angular.module('myApp.springPlayground')
         var self = this;
         self.executeHealthCheck = executeHealthCheck;
         self.clear = clear;
-        self.logEntries = [];
 
+        clear();
         executeHealthCheck();
 
         function executeHealthCheck() {
