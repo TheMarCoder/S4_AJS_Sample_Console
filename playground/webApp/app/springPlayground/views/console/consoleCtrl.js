@@ -5,7 +5,7 @@
 angular.module('myApp.springPlayground')
     .controller('consoleCtrl', consoleCtrl);
 
-    function consoleCtrl($http) {
+    function consoleCtrl(healthCheckService) {
         var self = this;
         self.executeHealthCheck = executeHealthCheck;
         self.clear = clear;
@@ -14,14 +14,7 @@ angular.module('myApp.springPlayground')
         executeHealthCheck();
 
         function executeHealthCheck() {
-            $http.get("/healthCheck")
-              .success(function(response) {
-                  self.logEntries.push(response.content);
-                }
-              )
-              .error(function (error) {
-                  self.logEntries.push(error === null ? "Backend healthCheck ... FAILED" : error);
-              });
+            healthCheckService.executeHealthCheck(self.logEntries)
         }
         
         function clear() {
