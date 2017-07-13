@@ -21,7 +21,9 @@ config(['$locationProvider', '$routeProvider', '$stateProvider',
                   'console@springPlayground': {
                         templateUrl: "springPlayground/views/console/console.html"},
                   'headline@springPlayground': {
-                        template: "<h1>Spring 4 Playground</h1><br><h2>Overview</h2>" }
+                        template: "<h1>Spring 4 Playground</h1><br>" },
+                  'overview@springPlayground': {
+                        template: "<button type='button' class='btn btn-default' ng-click='console.executeHealthCheck()'>Execute healthcheck</button>" }
               }
         });
 }]);

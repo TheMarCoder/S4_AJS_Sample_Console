@@ -7,12 +7,24 @@ angular.module('myApp.springPlayground')
 
     function consoleCtrl($http) {
         var self = this;
-        healthCheck();
+        self.executeHealthCheck = executeHealthCheck;
+        self.clear = clear;
+        self.logEntries = [];
 
-        function healthCheck() {
+        executeHealthCheck();
+
+        function executeHealthCheck() {
             $http.get("/healthCheck")
-              .then(function(response) {
-                  self.output = response.data.content;
-            });
+              .success(function(response) {
+                  self.logEntries.push(response.content);
+                }
+              )
+              .error(function (error) {
+                  self.logEntries.push(error === null ? "Backend healthCheck ... FAILED" : error);
+              });
+        }
+        
+        function clear() {
+            self.logEntries = [];
         }
     }
