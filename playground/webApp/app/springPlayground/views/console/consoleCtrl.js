@@ -3,7 +3,16 @@
  */
 
 angular.module('myApp.springPlayground')
-    .controller('consoleCtrl', function() {
+    .controller('consoleCtrl', consoleCtrl);
+
+    function consoleCtrl($http) {
         var self = this;
-        self.output = "Hello world!";
-    });
+        healthCheck();
+
+        function healthCheck() {
+            $http.get("/healthCheck")
+              .then(function(response) {
+                  self.output = response.data.content;
+            });
+        }
+    }
